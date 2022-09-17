@@ -1,0 +1,19 @@
+{% extends "herokudjangoapp/base.html" %}
+
+{% block content %}
+<!-- 認証失敗時の警告文 -->
+{% if form.errors %}
+<p>ログイン認証に失敗しました。</p>
+{% endif %}
+<form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    <label>ユーザー名</label>
+    {{ form.username }}
+    {{ form.username.errors }}
+    <label>パスワード</label>
+    {{ form.password }}
+    {{ form.password.errors }}
+    <button type = "submit" id="send-login">ログイン</button>
+    <a href="/signup"><button type = "button" id="send-login">ユーザー登録</button></a>
+</form>
+{% endblock %}

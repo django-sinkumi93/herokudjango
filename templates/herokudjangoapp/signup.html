@@ -1,0 +1,23 @@
+{% extends 'herokudjangoapp/base.html' %}
+
+{% block content %}
+<form method="POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+    <div>
+    <label>ユーザーID</label>
+    {{ form.username }}
+    {{ form.username.errors }}
+    </div>
+    <div>
+    <label>パスワード</label>
+    {{ form.password1 }}
+    {{ form.password1.errors }}
+    </div>
+    <div>
+    <label>パスワード(確認)</label>
+    {{ form.password2 }}
+    {{ form.password2.errors }}
+    </div>
+    <button type = "submit">登録</button>
+</form>
+{% endblock %}

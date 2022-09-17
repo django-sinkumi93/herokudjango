@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>herokudjangoapp</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light" style="background-color: #bbf1ef">
+      <span class="navbar-brand mb-0 h1">動物判別アプリ</span>
+      <!-- ログアウト機能の追加 -->
+      {% if user.is_authenticated %}
+      <span style="font-size:15px; text-align: right;">
+        <!-- ログアウトのURLに移動するように処理 -->
+        <a href="{% url 'logout' %}" style="color:black; text-decoration: underline;">
+        こんにちは、{{ user.username}}さん
+        </a>
+      </span>
+      {% endif %}
+      {% block content %}{% endblock %}
+    </nav>
+  </body>
+</html>

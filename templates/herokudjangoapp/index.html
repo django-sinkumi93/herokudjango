@@ -1,0 +1,20 @@
+{% extends 'herokudjangoapp/base.html' %}
+{% block content %}
+    
+<h2>犬猫判別アプリ</h2>
+
+{% if user.id  %}
+<p>ログインしました。</p>
+<p>こんにちは，{{ user.username }}さん。</p>
+<a href="{% url 'logout' %}">ログアウトする</a>
+{% else %}
+<a href="{% url 'login' %}">ログイン</a>
+<br />
+{% endif %}
+<p>画像を登録してください。</p>
+<br />
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %} {{ form.as_p }}
+    <button type = "submit" class="inference">送信</button>
+</form>
+{% endblock %}

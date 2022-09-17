@@ -1,0 +1,8 @@
+{% extends 'herokudjangoapp/base.html' %}
+
+{% block content %}
+<img src="{{ image_url }}" alt="画像を読み込めません" />
+<br />
+<p>この画像は{{ y_label }}です。</p>
+<!--<p>信頼度は{{ y_proba }}％です。</p>-->
+{% endblock %}
