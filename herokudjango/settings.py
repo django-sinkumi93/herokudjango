@@ -120,5 +120,5 @@ LOGOUT_URL='logout'
 LOGOUT_REDIRECT_URL='login'
 
 # heroku へのデプロイ用コード
-# import django_heroku
-# django_heroku.settings(locals())
+import django_heroku
+django_heroku.settings(locals())
